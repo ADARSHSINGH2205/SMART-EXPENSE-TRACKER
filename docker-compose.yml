@@ -12,6 +12,8 @@ services:
       - "${PAYARC_PORT:-8080}:8000"
     environment:
       PAYARC_DATABASE_URL: ${PAYARC_DATABASE_URL:-sqlite:////data/payarc.db}
+      PAYARC_BACKUP_DIR: ${PAYARC_BACKUP_DIR:-/data/backups}
+      PAYARC_UPLOAD_DIR: ${PAYARC_UPLOAD_DIR:-/data/uploads}
       PORT: "8000"
       # Loaded from the project's .env by Docker Compose; never bundled into the image.
       GEMINI_API_KEY: ${GEMINI_API_KEY:-}

@@ -23,7 +23,7 @@ from .database import BASE_DIR, get_db
 from .gemini import extract_receipt_text, gemini_status
 
 router = APIRouter(prefix="/api", tags=["productivity"])
-UPLOADS = BASE_DIR / "uploads"
+UPLOADS = Path(os.getenv("PAYARC_UPLOAD_DIR", str(BASE_DIR / "uploads")))
 BACKUPS = Path(os.getenv("PAYARC_BACKUP_DIR", str(BASE_DIR / "backups")))
 MAX_UPLOAD = 10 * 1024 * 1024
 
