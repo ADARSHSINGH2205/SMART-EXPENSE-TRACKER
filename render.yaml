@@ -1,0 +1,15 @@
+# Render Blueprint: deploys React and FastAPI together behind one URL.
+# Attach the included persistent disk before relying on the app for real data.
+services:
+  - type: web
+    name: payarc
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    disk:
+      name: payarc-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: PAYARC_DATABASE_URL
+        value: sqlite:////data/payarc.db

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vela — Private expense manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">v</span><span>vela</span></a>
+      <p class="workspace-label">PERSONAL SPACE</p>
+      <nav class="nav">
+        <a class="active" href="#overview"><span>⌂</span> Overview</a>
+        <a href="#transactions"><span>⇅</span> Transactions</a>
+        <a href="#budgets"><span>◎</span> Budgets</a>
+        <a href="#insights"><span>◔</span> Insights</a>
+        <a href="#goals"><span>✦</span> Goals</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="privacy-card"><span class="lock">⌑</span><div><b>Private by design</b><small>Your data stays on this device.</small></div></div>
+        <a class="settings" href="#settings">⚙ Settings</a>
+        <div class="user"><div class="avatar">AS</div><div><b>Adarsh Singh</b><small>Personal account</small></div><span>⌄</span></div>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <button class="menu-button" aria-label="Open menu">☰</button>
+        <div class="welcome"><p>Thursday, 24 September</p><h1>Good morning, Adarsh <span>✦</span></h1></div>
+        <div class="top-actions"><button class="icon-button" aria-label="Search">⌕</button><button class="icon-button notification" aria-label="Notifications">♧</button><button class="add-button" id="openExpense">+ Add expense</button></div>
+      </header>
+
+      <section id="overview" class="overview-grid">
+        <article class="balance-card card">
+          <div class="card-label">TOTAL BALANCE <button class="more">•••</button></div>
+          <h2>₹84,260<span>.50</span></h2>
+          <div class="balance-bottom"><span class="positive">↗ 12.8%</span><span>vs last month</span><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        </article>
+        <article class="metric-card card"><div class="metric-icon coral">↓</div><div><p>THIS MONTH'S SPEND</p><h3>₹18,420</h3><span class="negative">↑ 4.6%</span> <small>vs last month</small></div></article>
+        <article class="metric-card card"><div class="metric-icon mint">⌂</div><div><p>SAVINGS THIS MONTH</p><h3>₹12,750</h3><span class="positive">↑ 18.2%</span> <small>vs last month</small></div></article>
+      </section>
+
+      <section class="content-grid">
+        <article class="card spending-card" id="insights">
+          <div class="section-heading"><div><h2>Spending overview</h2><p>Your expense rhythm this month</p></div><button class="period">September 2026⌄</button></div>
+          <div class="chart-wrap">
+            <div class="axis"><span>₹30k</span><span>₹20k</span><span>₹10k</span><span>₹0</span></div>
+            <svg class="area-chart" viewBox="0 0 650 230" preserveAspectRatio="none" aria-label="Spending chart">
+              <defs><linearGradient id="area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#7768e7" stop-opacity=".28"/><stop offset="1" stop-color="#7768e7" stop-opacity="0"/></linearGradient></defs>
+              <path d="M0 180 C30 168 45 175 70 151 S105 129 130 146 S160 166 185 136 S217 102 245 119 S278 139 305 108 S341 71 370 99 S404 123 430 82 S464 32 492 60 S527 120 555 79 S590 50 620 71 S640 61 650 46 L650 230 L0 230Z" fill="url(#area)"/>
+              <path d="M0 180 C30 168 45 175 70 151 S105 129 130 146 S160 166 185 136 S217 102 245 119 S278 139 305 108 S341 71 370 99 S404 123 430 82 S464 32 492 60 S527 120 555 79 S590 50 620 71 S640 61 650 46" fill="none" stroke="#7768e7" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="492" cy="60" r="5" fill="#fff" stroke="#7768e7" stroke-width="3"/><line x1="492" y1="60" x2="492" y2="218" stroke="#a8a0ed" stroke-dasharray="4 5"/>
+            </svg>
+            <div class="chart-tip"><b>₹24,860</b><small>19 September</small></div>
+            <div class="x-axis"><span>1 Sep</span><span>5 Sep</span><span>10 Sep</span><span>15 Sep</span><span>20 Sep</span><span>25 Sep</span><span>30 Sep</span></div>
+          </div>
+        </article>
+
+        <article class="card category-card"><div class="section-heading"><div><h2>By category</h2><p>September 2026</p></div><button class="more">•••</button></div><div class="donut-row"><div class="donut"><div><b>₹18.4k</b><small>Total spent</small></div></div><ul class="legend"><li><i class="dot purple"></i><span>Food & dining</span><b>₹6,340</b></li><li><i class="dot orange"></i><span>Shopping</span><b>₹4,120</b></li><li><i class="dot aqua"></i><span>Transport</span><b>₹2,780</b></li><li><i class="dot peach"></i><span>Others</span><b>₹5,180</b></li></ul></div></article>
+      </section>
+
+      <section class="lower-grid">
+        <article class="card transaction-card" id="transactions"><div class="section-heading"><div><h2>Recent transactions</h2><p>Keep an eye on every rupee</p></div><a href="#transactions">View all →</a></div><div class="transactions" id="transactionList"><div class="transaction"><div class="trans-icon food">☕</div><div class="trans-name"><b>Blue Tokai Coffee</b><small>Today · Food & dining</small></div><span class="tag personal">Personal</span><b class="amount">− ₹380</b></div><div class="transaction"><div class="trans-icon travel">⌁</div><div class="trans-name"><b>Uber</b><small>Today · Transport</small></div><span class="tag personal">Personal</span><b class="amount">− ₹245</b></div><div class="transaction"><div class="trans-icon income">↙</div><div class="trans-name"><b>Freelance project</b><small>Yesterday · Income</small></div><span class="tag income-tag">Income</span><b class="amount income-amount">+ ₹8,500</b></div><div class="transaction"><div class="trans-icon shop">▣</div><div class="trans-name"><b>Amazon</b><small>Yesterday · Shopping</small></div><span class="tag shared">Shared</span><b class="amount">− ₹1,299</b></div></div></article>
+        <article class="card budget-card" id="budgets"><div class="section-heading"><div><h2>Monthly budgets</h2><p>Stay comfortably on track</p></div><button class="more">•••</button></div><div class="budget-item"><div><span class="budget-icon food">☕</span><b>Food & dining</b><small>₹6,340 of ₹8,000</small></div><div class="progress"><i style="width:79%"></i></div><strong>79%</strong></div><div class="budget-item"><div><span class="budget-icon travel">⌁</span><b>Transport</b><small>₹2,780 of ₹4,500</small></div><div class="progress"><i class="aqua-bar" style="width:62%"></i></div><strong>62%</strong></div><div class="budget-item"><div><span class="budget-icon shop">▣</span><b>Shopping</b><small>₹4,120 of ₹5,000</small></div><div class="progress"><i class="orange-bar" style="width:82%"></i></div><strong class="warning">82%</strong></div><button class="new-budget">+ Create budget</button></article>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="expenseDialog"><form method="dialog" id="expenseForm"><div class="modal-head"><div><p>NEW TRANSACTION</p><h2>Add an expense</h2></div><button class="close" value="cancel">×</button></div><div class="form-grid"><label>Amount<input required name="amount" type="number" min="1" placeholder="0.00" /></label><label>Date<input required name="date" type="date" /></label><label class="full">Merchant or note<input required name="merchant" placeholder="e.g. Weekend groceries" /></label><label>Category<select name="category"><option>Food & dining</option><option>Shopping</option><option>Transport</option><option>Housing</option><option>Health & wellness</option><option>Subscriptions</option><option>Other</option></select></label><label>Payment method<select name="payment"><option>UPI</option><option>Credit card</option><option>Cash</option><option>Debit card</option><option>Bank transfer</option></select></label><label>Expense for<select name="privacy"><option>Personal</option><option>Shared household</option><option>Work reimbursable</option></select></label><label>Visibility<select name="visibility"><option>Private — only me</option><option>Visible to household</option></select></label><label class="full">Private note <em>(optional)</em><textarea name="note" placeholder="Add context only you can see…"></textarea></label></div><div class="modal-actions"><span>⌑ Saved locally and privately</span><button class="add-button" value="default">Save expense</button></div></form></dialog>
+  <script src="app.js"></script>
+</body>
+</html>

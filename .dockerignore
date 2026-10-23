@@ -1,0 +1,29 @@
+# Source-control and editor metadata
+.git
+.gitignore
+.vscode
+.idea
+
+# JavaScript build artefacts and local dependencies
+node_modules
+frontend/node_modules
+frontend/dist
+frontend/.vite
+frontend/.env
+frontend/.env.*
+
+# Python virtual environments, bytecode, and local data
+backend/.venv
+backend/__pycache__
+**/__pycache__
+*.py[cod]
+backend/payarc.db
+*.sqlite
+*.sqlite3
+
+# Local runtime configuration and generated files
+.env
+.env.*
+data
+coverage
+.pytest_cache

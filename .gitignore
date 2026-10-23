@@ -1,0 +1,20 @@
+# JavaScript
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Python
+backend/.venv/
+backend/__pycache__/
+backend/**/*.pyc
+backend/payarc.db
+backend/backups/
+backend/uploads/
+*.log
+
+# Environment and editor files
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
